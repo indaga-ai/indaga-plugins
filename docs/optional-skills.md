@@ -10,10 +10,10 @@ Versioned release assets include:
 
 | Skill archive | Workflow |
 | --- | --- |
-| `indaga-record-skill-0.2.4.zip` | Recorded sources, date ranges and missing inputs |
-| `indaga-weekly-skill-0.2.4.zip` | Weekly wearable comparisons |
-| `indaga-recovery-skill-0.2.4.zip` | Recovery evidence and training-ceiling limits |
-| `indaga-labs-skill-0.2.4.zip` | Named dated results and panel coverage |
+| `indaga-record-skill-0.2.5.zip` | Recorded sources, date ranges and missing inputs |
+| `indaga-weekly-skill-0.2.5.zip` | Weekly wearable comparisons |
+| `indaga-recovery-skill-0.2.5.zip` | Recovery evidence and training-ceiling limits |
+| `indaga-labs-skill-0.2.5.zip` | Named dated results and panel coverage |
 
 Download assets from the [reviewed release](https://github.com/indaga-ai/indaga-plugins/releases)
 when published. A source checkout or prepared archive does not establish directory
@@ -68,7 +68,7 @@ release checksums and install weekly only if its destination does not exist:
 shasum -a 256 -c SHA256SUMS
 mkdir -p ~/.agents/skills
 test ! -e ~/.agents/skills/indaga-weekly && \
-  unzip indaga-weekly-skill-0.2.4.zip -d ~/.agents/skills
+  unzip indaga-weekly-skill-0.2.5.zip -d ~/.agents/skills
 ```
 
 Keep all downloaded assets alongside `SHA256SUMS` for that checksum command. If

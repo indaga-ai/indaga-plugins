@@ -2,6 +2,14 @@ Four contained read-only workflows for the hosted Indaga MCP connection: record,
 weekly, recovery and labs. Install using the marketplace instructions in the
 repository README, or download the versioned plugin archive.
 
+Version 0.2.5 keeps incomplete recovery flags and counts from being interpreted
+as an all-clear result. Recovery answers lead with the returned state, dated
+coverage and blocking reason. A minimum paired-day threshold does not predict
+when calibration will finish. Training-ceiling requirements come only from the
+ceiling operation itself; an unavailable ceiling does not support a personal
+workload or effort recommendation. The optional recovery pack carries the same
+canonical repair. Hosted tools, permissions and public contract are unchanged.
+
 Version 0.2.4 points all host manifests and installation links to the fresh public
 release mirror, `indaga-ai/indaga-plugins`. Runtime procedures, evidence, hosted
 tools, contract and permission disclosures are unchanged from 0.2.3. Private

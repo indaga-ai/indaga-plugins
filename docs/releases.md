@@ -94,10 +94,9 @@ The same build also emits four instruction-only standalone skill ZIPs. Each has
 one namespaced skill folder, contained connection/evidence/contract references,
 license and installation README. The build adapts only standalone names, local
 links, upload-description length and connection-guide containment wording; it
-records every transformation and file/archive hash in `release.json`. The complete
-plugin's runtime files remain unchanged apart from release metadata updates.
-Existing draft-release ZIP
-selection includes these sidecar assets. See [optional-skill installation](optional-skills.md).
+records every transformation and file/archive hash in `release.json`. Standalone
+packaging does not alter the complete plugin's canonical runtime instructions.
+Existing draft-release ZIP selection includes these sidecar assets. See [optional-skill installation](optional-skills.md).
 Packaging proof does not establish successful upload, host dependency behavior or
 authenticated native acceptance for a standalone pack.
 

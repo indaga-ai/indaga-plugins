@@ -10,7 +10,7 @@ connection's sign-in and consent. In Claude Code, use `/mcp` to authenticate, th
 try `/indaga:record`, `/indaga:weekly`, `/indaga:recovery` or `/indaga:labs`.
 
 The endpoint is `https://app.indaga.ai/v1/mcp/public-workflows`. The procedures are contained in this
-package and do not download behavioral guidance. Version `0.2.4` is a release
+package and do not download behavioral guidance. Version `0.2.5` is a release
 candidate; manifest validation alone does not establish native sign-in, workflow
 acceptance or directory approval. The [connection guide](references/connection.md)
 identifies the reviewed public contract. Every tool call passes the required

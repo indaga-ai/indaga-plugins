@@ -71,7 +71,7 @@ provider. The plugin contains no account credentials or personal records.
 
 ## Compatibility and support
 
-Version `0.2.4` uses a small, self-contained set of public procedures. Its required
+Version `0.2.5` uses a small, self-contained set of public procedures. Its required
 public contract is documented in [the connection guide](indaga/references/connection.md).
 Each call supplies the required public-contract version; the public endpoint rejects
 unsupported versions before personal reads. The workflows also require a briefing

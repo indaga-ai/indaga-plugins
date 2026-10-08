@@ -11,7 +11,7 @@
     {
       "name": "indaga",
       "source": "./indaga",
-      "version": "0.2.4",
+      "version": "0.2.5",
       "description": "Review your own Indaga record, weekly changes, recovery and dated lab results."
     }
   ]

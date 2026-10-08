@@ -16,20 +16,34 @@ For a question about training today, also read
 `decision.ceiling({"public_contract":"1.0.0"})`.
 Both operations take only the required `public_contract` version. Explain the results separately at the scope
 supported by each result's envelope; do not derive a ceiling from a readiness label.
+The initial briefing routes questions, but does not supply either operation's
+result or requirements. Discuss a ceiling's state, evidence or missing inputs
+only after reading `decision.ceiling`, using that result's own reason and limits.
 
-Keep `latest_date`, state, paired/input-day coverage and returned qualifications
-with the recovery result. Empty or calibrating history does not establish
-readiness. Pattern names such as functional fatigue or overreaching do not
-diagnose a syndrome. An old readiness label is historical, not today's training
-assessment.
+Keep returned dates, input coverage and qualifications with every recovery result.
+Lead an incomplete or calibrating recovery answer with its state, `latest_date`,
+paired/input-day coverage and blocking reason. With `index_incomplete`,
+`needs_more_data` or `calibrating`, false flags and zero episode/co-flag counts
+are not cleared findings or evidence of absence. Do not describe them as
+"all clear," "no issues" or no fatigue/overreaching; do not list default flags as
+reassuring findings when negative inference is disallowed. Empty or calibrating
+history does not establish readiness. A returned paired-day threshold is minimum
+coverage, not a promise that calibration will succeed or finish on a particular
+day. Pattern names such as functional fatigue or overreaching do not diagnose a
+syndrome. An old readiness label is historical, not today's training assessment.
 
 The ceiling uses its own recovery composite and recent-session reference.
 Insufficient evidence or reference sessions can withhold it or leave it
-calibrating. Explain that uncertainty rather than inventing a workload. Preserve
-the returned `headline`, `undershoot_ok`, `undershoot_note`, reference-session
-limits and supported reason. A ceiling is an upper bound, not a target or an
-obligation to reach it. Do not replace a relative limit with a fabricated
-heart-rate zone, duration, absolute load or recovery band.
+calibrating. Explain that uncertainty using the ceiling result's own `headline`,
+reference-session limits and supported reason. When the ceiling is missing,
+unavailable or not ready, limit the answer to that uncertainty and supported next
+inputs. Do not recommend a personal easy/moderate session, workload, intensity or
+effort increase, or replace the missing limit with advice based on how the person
+feels. General wellness context must not supply an unsupported training plan.
+For a supported ceiling, preserve `undershoot_ok` and `undershoot_note`. A ceiling
+is an upper bound, not a target or an obligation to reach it. Do not replace a
+relative limit with a fabricated heart-rate zone, duration, absolute load or
+recovery band.
 
 This workflow reads only. It does not set goals, log a workout, edit the plan or
 create a routine. A missing, stale or `not_measured` signal is unknown, never a
