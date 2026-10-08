@@ -1,0 +1,16 @@
+{
+  "name": "indaga",
+  "version": "0.2.4",
+  "description": "Review your own Indaga record, weekly changes, recovery and dated lab results.",
+  "author": {
+    "name": "Indaga",
+    "email": "support@indaga.ai",
+    "url": "https://indaga.ai"
+  },
+  "homepage": "https://indaga.ai",
+  "repository": "https://github.com/indaga-ai/indaga-plugins",
+  "license": "AGPL-3.0-or-later",
+  "icon": "./assets/icon-512.png",
+  "privacyPolicyUrl": "https://app.indaga.ai/privacy",
+  "displayName": "Indaga"
+}

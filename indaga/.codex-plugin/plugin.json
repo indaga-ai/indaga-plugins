@@ -1,0 +1,36 @@
+{
+  "name": "indaga",
+  "version": "0.2.4",
+  "description": "Review your own Indaga record, weekly changes, recovery and dated lab results.",
+  "author": {
+    "name": "Indaga",
+    "email": "support@indaga.ai",
+    "url": "https://indaga.ai"
+  },
+  "homepage": "https://indaga.ai",
+  "repository": "https://github.com/indaga-ai/indaga-plugins",
+  "license": "AGPL-3.0-or-later",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Indaga",
+    "shortDescription": "Understand your Indaga record",
+    "longDescription": "Four read-only workflows for adults reviewing their own Indaga record: record inventory, weekly changes, recovery and selected dated lab results. Preserve dates, units, missing inputs and uncertainty. For consumer wellness information, not diagnosis or treatment. An Indaga account and Connect access are required. The public workflow endpoint exposes six read tools. Its OAuth Connect credential retains the usual broader grant, including writes through other Indaga MCP surfaces; this package does not narrow that grant. Connecting lets your chosen AI provider receive the information it reads under that provider's terms and privacy policy. Review the OAuth permissions and health-data transfer disclosure before connecting.",
+    "developerName": "Indaga",
+    "category": "Healthcare",
+    "websiteURL": "https://indaga.ai",
+    "supportURL": "https://app.indaga.ai/support",
+    "privacyPolicyURL": "https://app.indaga.ai/privacy",
+    "termsOfServiceURL": "https://app.indaga.ai/terms",
+    "logo": "./assets/icon-512.png",
+    "composerIcon": "./assets/icon-192.png",
+    "capabilities": [
+      "Read"
+    ],
+    "defaultPrompt": [
+      "What does Indaga know about me?",
+      "What changed this week? Include recovery.",
+      "Review my latest lab result."
+    ]
+  }
+}

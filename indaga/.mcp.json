@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "indaga-public-workflows": {
+      "type": "http",
+      "url": "https://app.indaga.ai/v1/mcp/public-workflows"
+    }
+  }
+}

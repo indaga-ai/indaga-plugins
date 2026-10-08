@@ -1,0 +1,133 @@
+{
+  "format": "indaga-public-workflows-v1",
+  "mcp_url": "https://app.indaga.ai/v1/mcp/public-workflows",
+  "operations": {
+    "decision.ceiling": {
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "public_contract": {
+            "description": "Public workflow compatibility version.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_contract"
+        ],
+        "type": "object"
+      }
+    },
+    "indaga.describe_context": {
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "public_contract": {
+            "description": "Public workflow compatibility version.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_contract"
+        ],
+        "type": "object"
+      }
+    },
+    "labs.panel_coverage": {
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "analytes": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "public_contract": {
+            "description": "Public workflow compatibility version.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_contract"
+        ],
+        "type": "object"
+      }
+    },
+    "labs.query": {
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "analyte": {
+            "description": "normalized name, e.g. 'ldl_cholesterol' or 'apob'",
+            "type": "string"
+          },
+          "flagged_only": {
+            "type": "boolean"
+          },
+          "public_contract": {
+            "description": "Public workflow compatibility version.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_contract"
+        ],
+        "type": "object"
+      }
+    },
+    "recovery.state": {
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "public_contract": {
+            "description": "Public workflow compatibility version.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_contract"
+        ],
+        "type": "object"
+      }
+    },
+    "weekly.delta": {
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "public_contract": {
+            "description": "Public workflow compatibility version.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_contract"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "result_contract": {
+    "authority": "EvidenceEnvelope",
+    "field": "evidence_envelope"
+  },
+  "supported_versions": [
+    "1.0.0"
+  ],
+  "version": "1.0.0",
+  "workflows": {
+    "labs": [
+      "labs.query",
+      "labs.panel_coverage"
+    ],
+    "record": [
+      "indaga.describe_context"
+    ],
+    "recovery": [
+      "recovery.state",
+      "decision.ceiling"
+    ],
+    "weekly": [
+      "weekly.delta"
+    ]
+  }
+}

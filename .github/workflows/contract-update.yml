@@ -1,0 +1,46 @@
+name: Review hosted contract changes
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '23 7 * * *'
+permissions:
+  actions: write
+  contents: write
+  pull-requests: write
+concurrency:
+  group: public-contract-update
+  cancel-in-progress: false
+jobs:
+  propose:
+    # Review source changes in private staging; public mirrors receive approved snapshots.
+    if: github.event.repository.private == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/check_hosted_contract.py --update
+      - uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+        id: proposal
+        with:
+          branch: automation/public-contract-update
+          commit-message: Propose hosted public contract projection update
+          author: Indaga <support@indaga.ai>
+          committer: Indaga <support@indaga.ai>
+          title: Review hosted public contract and plugin version update
+          body: |
+            The anonymous hosted public contract changed. This PR updates only the
+            public schema projection and proposes a plugin patch version. It does
+            not replace workflow instructions, change their required contract,
+            merge, publish, or deploy anything.
+
+            Review compatible versus breaking changes, update the bounded workflows
+            if needed, run package and native acceptance checks, and keep the prior
+            public contract supported during rollout. A failed package compatibility
+            gate means this PR needs an explicit workflow migration before release.
+      - name: Run checks for token-created PR
+        if: steps.proposal.outputs.pull-request-operation == 'created' || steps.proposal.outputs.pull-request-operation == 'updated'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run check.yml --ref automation/public-contract-update

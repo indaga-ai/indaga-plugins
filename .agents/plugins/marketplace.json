@@ -1,0 +1,20 @@
+{
+  "name": "indaga",
+  "interface": {
+    "displayName": "Indaga"
+  },
+  "plugins": [
+    {
+      "name": "indaga",
+      "source": {
+        "source": "local",
+        "path": "./indaga"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Healthcare"
+    }
+  ]
+}
