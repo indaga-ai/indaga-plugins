@@ -15,6 +15,17 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Healthcare"
+    },
+    {
+      "name": "indaga-weekly",
+      "source": {
+        "source": "local",
+        "path": "./indaga-weekly"
+      },
+      "policy": {
+        "installation": "AVAILABLE"
+      },
+      "category": "Healthcare"
     }
   ]
 }

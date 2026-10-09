@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Approved version on main (for example 0.2.5)'
+        description: 'Approved version on main (for example 0.2.6)'
         required: true
         type: string
 permissions:
@@ -33,6 +33,7 @@ jobs:
       - run: python scripts/check_hosted_contract.py
       - run: npm install --global @anthropic-ai/claude-code@2.1.287
       - run: claude plugin validate --strict indaga
+      - run: claude plugin validate --strict indaga-weekly
       - run: claude plugin validate --strict .claude-plugin/marketplace.json
       - run: python scripts/release.py build
       - name: Create draft without publishing

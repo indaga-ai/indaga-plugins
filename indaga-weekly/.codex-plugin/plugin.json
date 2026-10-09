@@ -1,0 +1,35 @@
+{
+  "name": "indaga-weekly",
+  "version": "0.2.6",
+  "description": "Review weekly changes in your own Indaga wearable record. Requires the main Indaga plugin at compatible 0.2.x >=0.2.6 and its authenticated public connection.",
+  "author": {
+    "name": "Indaga",
+    "email": "support@indaga.ai",
+    "url": "https://indaga.ai"
+  },
+  "homepage": "https://indaga.ai",
+  "repository": "https://github.com/indaga-ai/indaga-plugins",
+  "license": "AGPL-3.0-or-later",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Indaga Weekly",
+    "shortDescription": "Review weekly wearable changes",
+    "longDescription": "One read-only weekly comparison workflow for adults reviewing their own Indaga wearable record. Requires the installed main Indaga plugin at compatible 0.2.x >=0.2.6 and its authenticated public workflow connection. This instruction-only plugin registers no MCP server and performs no separate authentication. Preserve dates, units, missing inputs and uncertainty. For consumer wellness information, not diagnosis or treatment. All six public tools and the broader OAuth grant remain available through the main connection. Your chosen AI provider receives the information it reads under its terms and privacy policy and may process it outside the EU. Revocation stops future access without deleting provider copies. Separate packaging does not establish directory eligibility or approval.",
+    "developerName": "Indaga",
+    "category": "Healthcare",
+    "websiteURL": "https://indaga.ai",
+    "supportURL": "https://app.indaga.ai/support",
+    "privacyPolicyURL": "https://app.indaga.ai/privacy",
+    "termsOfServiceURL": "https://app.indaga.ai/terms",
+    "logo": "./assets/icon-512.png",
+    "composerIcon": "./assets/icon-192.png",
+    "capabilities": [
+      "Read"
+    ],
+    "defaultPrompt": [
+      "Review my weekly wearable changes.",
+      "Compare my latest two sets of seven observed days.",
+      "Explain missing inputs in my weekly comparison."
+    ]
+  }
+}

@@ -1,6 +1,21 @@
-Four contained read-only workflows for the hosted Indaga MCP connection: record,
-weekly, recovery and labs. Install using the marketplace instructions in the
-repository README, or download the versioned plugin archive.
+Three contained read-only workflows in the main Indaga plugin: record, recovery
+and labs, with the hosted connection. Indaga Weekly is a separately installed
+instruction-only plugin. Install using the repository README or versioned assets.
+
+Version 0.2.6 moves the unchanged weekly procedure to its own plugin with contained
+references, license, icons and host manifests. Main no longer bundles weekly
+instructions. Weekly requires compatible installed main `~0.2.6` and its
+authenticated public connection. Claude declares the supported dependency;
+Codex requires main to be installed explicitly. Weekly registers no MCP server
+and performs no separate authentication. Both plugin ZIP/.plugin pairs and all
+four standalone skill ZIPs are built from their actual source owners with exact
+file, archive and transformation receipts. Contract-update proposals keep both
+reference copies, versions and the Claude dependency minimum together.
+
+The hosted six-tool inventory, including weekly.delta, public contract and broad
+OAuth grant remain unchanged. All four procedural bodies, including the 0.2.5
+recovery correction, are preserved. Modular distribution does not establish
+health-use eligibility, directory approval or native acceptance.
 
 Version 0.2.5 keeps incomplete recovery flags and counts from being interpreted
 as an all-clear result. Recovery answers lead with the returned state, dated

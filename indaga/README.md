@@ -1,29 +1,31 @@
 # Indaga
 
-Four read-only workflows help an adult review their own Indaga record: recorded
-sources and gaps, weekly wearable changes, dated recovery evidence and named lab
-results or panel coverage. An Indaga account with Connect access is required.
+The default main plugin contains three read-only procedures: recorded sources
+and gaps, dated recovery evidence and named lab results or panel coverage.
+An adult reviews their own record with an Indaga account and Connect access.
+Weekly comparisons are the separately installed **Indaga Weekly** plugin.
 
-Install this plugin from its marketplace or upload its `.plugin`/ZIP file through
-Claude's Customize → Plugins → Add → Upload plugin. Complete the hosted Indaga
-connection's sign-in and consent. In Claude Code, use `/mcp` to authenticate, then
-try `/indaga:record`, `/indaga:weekly`, `/indaga:recovery` or `/indaga:labs`.
+Install main from its marketplace or upload `indaga-0.2.6.plugin` / ZIP through
+Claude's supported plugin upload controls. Complete the hosted connection's
+sign-in and consent. In Claude Code, use `/mcp`, then `/indaga:record`,
+`/indaga:recovery` or `/indaga:labs`. Main does not contain `/indaga:weekly`.
 
-The endpoint is `https://app.indaga.ai/v1/mcp/public-workflows`. The procedures are contained in this
-package and do not download behavioral guidance. Version `0.2.5` is a release
-candidate; manifest validation alone does not establish native sign-in, workflow
-acceptance or directory approval. The [connection guide](references/connection.md)
-identifies the reviewed public contract. Every tool call passes the required
-version; the public endpoint rejects unsupported versions before personal reads.
-The assistant must still preserve evidence limits and verify briefing compatibility.
-Model compliance remains a separate acceptance check.
+Main registers `indaga-public-workflows` at
+`https://app.indaga.ai/v1/mcp/public-workflows`. Version `0.2.6` contains its
+procedures and does not download behavioral guidance. See the
+[connection guide](references/connection.md) for the reviewed public contract.
+Every tool call passes the required version; unsupported versions are rejected
+before personal reads. Preserve evidence limits and verify briefing compatibility.
+Manifest validation does not establish native sign-in, workflow acceptance or
+directory approval.
 
-The public workflow endpoint exposes six read tools. Its OAuth Connect credential
-retains the usual broader grant, including writes through the legacy Indaga MCP
-surface. This package does not narrow that grant. Review the consent permissions. The chosen AI
-provider receives health and genetic information it reads under its own terms
-and privacy policy, and may process it outside the EU. Revocation in Indaga stops
-future access without deleting copies previously received by the AI provider.
+The connection still exposes six read tools, including `weekly.delta`. Its OAuth
+Connect credential retains the usual broader grant, including writes through
+other Indaga MCP surfaces. Splitting instructions does not narrow that grant or
+establish directory eligibility. Review consent permissions. Your chosen AI
+provider receives health and genetic information it reads under its terms and
+privacy policy, and may process it outside the EU. Revocation stops future access
+without deleting provider copies.
 
 Wellness information, not diagnosis or treatment. Keep dates, units and missing
 inputs with each answer. [Support](https://app.indaga.ai/support),

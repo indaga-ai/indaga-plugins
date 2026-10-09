@@ -5,10 +5,13 @@ set -euo pipefail
 [[ "$RELEASE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
 [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]
 
-# Create, never update: GitHub refuses an existing tag, including a tag with no release.
-# This reserves the approved source atomically; --target alone would reuse an old tag.
-gh api --method POST "repos/$GITHUB_REPOSITORY/git/refs" \
-  -f "ref=refs/tags/v$RELEASE_VERSION" -f "sha=$GITHUB_SHA" --silent
+# Create, never update: each existing tag refuses before any artifact upload.
+# Claude dependency constraints resolve the per-plugin tags, not just the release tag.
+# Reservation is atomic per reference; a later collision leaves earlier tags reserved.
+for release_tag in "v$RELEASE_VERSION" "indaga--v$RELEASE_VERSION" "indaga-weekly--v$RELEASE_VERSION"; do
+  gh api --method POST "repos/$GITHUB_REPOSITORY/git/refs" \
+    -f "ref=refs/tags/$release_tag" -f "sha=$GITHUB_SHA" --silent
+done
 
 gh release create "v$RELEASE_VERSION" \
   dist/indaga-*.zip dist/indaga-*.plugin dist/SHA256SUMS dist/release.json \

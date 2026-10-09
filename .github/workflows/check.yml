@@ -24,5 +24,6 @@ jobs:
       - run: python scripts/release.py build
       - run: npm install --global @anthropic-ai/claude-code@2.1.287
       - run: claude plugin validate --strict indaga
+      - run: claude plugin validate --strict indaga-weekly
       - run: claude plugin validate --strict .claude-plugin/marketplace.json
       - run: git diff --exit-code

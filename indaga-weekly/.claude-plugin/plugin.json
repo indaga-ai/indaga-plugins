@@ -1,0 +1,23 @@
+{
+  "name": "indaga-weekly",
+  "version": "0.2.6",
+  "description": "Review weekly changes in your own Indaga wearable record. Requires the main Indaga plugin at compatible 0.2.x >=0.2.6 and its authenticated public connection.",
+  "author": {
+    "name": "Indaga",
+    "email": "support@indaga.ai",
+    "url": "https://indaga.ai"
+  },
+  "homepage": "https://indaga.ai",
+  "repository": "https://github.com/indaga-ai/indaga-plugins",
+  "license": "AGPL-3.0-or-later",
+  "icon": "./assets/icon-512.png",
+  "privacyPolicyUrl": "https://app.indaga.ai/privacy",
+  "displayName": "Indaga Weekly",
+  "dependencies": [
+    {
+      "name": "indaga",
+      "marketplace": "indaga",
+      "version": "~0.2.6"
+    }
+  ]
+}

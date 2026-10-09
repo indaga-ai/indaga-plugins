@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "indaga",
-  "version": "0.2.5",
-  "description": "Review your own Indaga record, weekly changes, recovery and dated lab results.",
+  "version": "0.2.6",
+  "description": "Review your own Indaga record, recovery evidence and dated lab results.",
   "author": {
     "name": "Indaga",
     "email": "support@indaga.ai",
@@ -16,7 +16,7 @@
       "interface": {
         "displayName": "Indaga",
         "shortDescription": "Understand your Indaga record",
-        "longDescription": "Four read-only workflows for adults reviewing their own Indaga record: record inventory, weekly changes, recovery and selected dated lab results. Preserve dates, units, missing inputs and uncertainty. For consumer wellness information, not diagnosis or treatment. An Indaga account and Connect access are required. The public workflow endpoint exposes six read tools. Its OAuth Connect credential retains the usual broader grant, including writes through other Indaga MCP surfaces; this package does not narrow that grant. Connecting lets your chosen AI provider receive the information it reads under that provider's terms and privacy policy. Review the OAuth permissions and health-data transfer disclosure before connecting.",
+        "longDescription": "Three read-only workflows for adults reviewing their own Indaga record: record inventory, recovery evidence and selected dated lab results. Weekly comparisons are a separately installed Indaga Weekly plugin. Preserve dates, units, missing inputs and uncertainty. For consumer wellness information, not diagnosis or treatment. An Indaga account and Connect access are required. The public workflow endpoint still exposes all six read tools, including weekly.delta. Its OAuth Connect credential retains the usual broader grant, including writes through other Indaga MCP surfaces; splitting instructions does not narrow that grant. Connecting lets your chosen AI provider receive the information it reads under that provider's terms and privacy policy. Review the OAuth permissions and health-data transfer disclosure before connecting.",
         "developerName": "Indaga",
         "category": "Healthcare",
         "websiteURL": "https://indaga.ai",
@@ -30,12 +30,12 @@
         ],
         "defaultPrompt": [
           "What does Indaga know about me?",
-          "What changed this week? Include recovery.",
+          "Review my recovery evidence and today's recorded training limit.",
           "Review my latest lab result."
         ]
       },
       "publication": {
-        "release_notes": "Four self-contained read-only workflows for the hosted Indaga MCP connection."
+        "release_notes": "Three contained read-only workflows and the hosted connection. Weekly is a separate instruction-only plugin."
       }
     }
   }

@@ -24,13 +24,14 @@ for name, expected in schemas.items():
     if len(data) > 256 * 1024 or hashlib.sha256(data).hexdigest() != expected:
         raise SystemExit(f"Reviewed {name} schema changed; inspect before updating its digest")
     validator = Draft202012Validator(json.loads(data))
-    validator.validate(json.loads((root / f"indaga/{name}.json").read_text()))
-    print(f"{name}: official schema passed")
+    for plugin in ("indaga", "indaga-weekly") if name == "plugin" else ("indaga",):
+        validator.validate(json.loads((root / f"{plugin}/{name}.json").read_text()))
+        print(f"{plugin}/{name}: official schema passed")
 
 contract = json.loads((root / "indaga/references/public-contract.json").read_text())
 for operation, entry in contract["operations"].items():
     Draft202012Validator.check_schema(entry["input_schema"])
-for skill in (root / "indaga/skills").glob("*/SKILL.md"):
+for skill in (p for plugin in ("indaga", "indaga-weekly") for p in (root / plugin / "skills").glob("*/SKILL.md")):
     calls = re.findall(r'`([a-z._]+)\((\{[^\n]+\})\)`', skill.read_text())
     for operation, arguments in calls:
         Draft202012Validator(contract["operations"][operation]["input_schema"]).validate(json.loads(arguments))

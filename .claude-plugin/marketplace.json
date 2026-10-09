@@ -5,14 +5,20 @@
     "email": "support@indaga.ai"
   },
   "metadata": {
-    "description": "Indaga record-review workflows for Claude."
+    "description": "Main Indaga connection and record, recovery and labs workflows, with an optional weekly plugin."
   },
   "plugins": [
     {
       "name": "indaga",
       "source": "./indaga",
-      "version": "0.2.5",
-      "description": "Review your own Indaga record, weekly changes, recovery and dated lab results."
+      "version": "0.2.6",
+      "description": "Review your own Indaga record, recovery evidence and dated lab results."
+    },
+    {
+      "name": "indaga-weekly",
+      "source": "./indaga-weekly",
+      "version": "0.2.6",
+      "description": "Review weekly changes in your own Indaga wearable record. Requires the main Indaga plugin at compatible 0.2.x >=0.2.6 and its authenticated public connection."
     }
   ]
 }

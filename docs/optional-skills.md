@@ -1,19 +1,19 @@
 # Install selected Indaga workflows
 
-The complete [Indaga plugin](../README.md#install-the-plugin) is the simplest
-starter: one package contains the connection and all four workflows. Standalone
-skills are an alternative for someone who already has the hosted connection and
-wants to install selected instructions. They do not automatically install another
-plugin, configure MCP or authenticate an account.
+The main [Indaga plugin](../README.md#install-the-main-plugin) contains the hosted
+connection and record, recovery and labs procedures. The optional **Indaga Weekly**
+plugin contains weekly only and reuses main's connection. These standalone skill
+ZIPs are an alternative instruction upload route for selected workflows. They do
+not automatically install another plugin, configure MCP or authenticate an account.
 
 Versioned release assets include:
 
 | Skill archive | Workflow |
 | --- | --- |
-| `indaga-record-skill-0.2.5.zip` | Recorded sources, date ranges and missing inputs |
-| `indaga-weekly-skill-0.2.5.zip` | Weekly wearable comparisons |
-| `indaga-recovery-skill-0.2.5.zip` | Recovery evidence and training-ceiling limits |
-| `indaga-labs-skill-0.2.5.zip` | Named dated results and panel coverage |
+| `indaga-record-skill-0.2.6.zip` | Recorded sources, date ranges and missing inputs |
+| `indaga-weekly-skill-0.2.6.zip` | Weekly wearable comparisons |
+| `indaga-recovery-skill-0.2.6.zip` | Recovery evidence and training-ceiling limits |
+| `indaga-labs-skill-0.2.6.zip` | Named dated results and panel coverage |
 
 Download assets from the [reviewed release](https://github.com/indaga-ai/indaga-plugins/releases)
 when published. A source checkout or prepared archive does not establish directory
@@ -34,8 +34,12 @@ connection controls to configure that URL if absent. Installing a skill does not
 make the connector's tools available in every client or session: confirm the
 connection is enabled where you will use the skill.
 
-Use one connection. If the complete Indaga plugin already provides these skills,
-use its workflows rather than adding duplicate standalone copies.
+Use one connection. Weekly, including its standalone skill pack, requires the
+installed main plugin at `~0.2.6` (compatible `0.2.x` versions at least `0.2.6`)
+and its authenticated connection. If absent or incompatible, install/update and
+connect main first. Do not add a standalone copy of a workflow already supplied
+by an installed plugin. A standalone pack declares no plugin dependency and
+does not install one automatically.
 
 ## Claude chat and Cowork
 
@@ -50,9 +54,9 @@ such as `indaga-weekly/SKILL.md`, plus its contained references and license.
 Skill creation and code execution can depend on your plan and organization
 settings. This route is a custom upload, not an Anthropic directory listing.
 See [Claude's custom-skill instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
-For Claude Code, the complete plugin installation in the main README remains the
-documented starter path; this repository does not claim an automatic dependency
-installer for separate packs.
+For Claude Code, the main and optional weekly plugin installations in the root
+README are the documented plugin route. Standalone skill uploads do not inherit
+the weekly plugin's Claude dependency declaration.
 
 ## Codex local skills
 
@@ -68,7 +72,7 @@ release checksums and install weekly only if its destination does not exist:
 shasum -a 256 -c SHA256SUMS
 mkdir -p ~/.agents/skills
 test ! -e ~/.agents/skills/indaga-weekly && \
-  unzip indaga-weekly-skill-0.2.5.zip -d ~/.agents/skills
+  unzip indaga-weekly-skill-0.2.6.zip -d ~/.agents/skills
 ```
 
 Keep all downloaded assets alongside `SHA256SUMS` for that checksum command. If
@@ -97,7 +101,9 @@ Each pack is self-contained and never downloads behavioral instructions at
 runtime. To update a standalone skill, review the new asset and checksum, then
 replace that skill through the host's supported controls and start a new session.
 The pack README records its source package version; `release.json` records the
-source commit, archive/file hashes and every packaging transformation. Connection
-and skill installation are separate from sign-in, acceptance and directory
+source commit, canonical plugin owner, archive/file hashes and every packaging
+transformation. Record, recovery and labs come from `indaga/`; weekly comes from
+`indaga-weekly/`. Connection and skill installation are separate from sign-in,
+acceptance and directory
 review. No one-click cross-client installation or new native acceptance is
 claimed by these packaging checks.

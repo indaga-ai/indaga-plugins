@@ -1,7 +1,7 @@
 {
   "name": "indaga",
-  "version": "0.2.5",
-  "description": "Review your own Indaga record, weekly changes, recovery and dated lab results.",
+  "version": "0.2.6",
+  "description": "Review your own Indaga record, recovery evidence and dated lab results.",
   "author": {
     "name": "Indaga",
     "email": "support@indaga.ai",

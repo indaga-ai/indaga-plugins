@@ -61,9 +61,10 @@ def fetch():
 
 
 def compatible(contract):
-    installed = json.loads((ROOT / "indaga/references/compatibility.json").read_text())
-    if installed["format"] != contract["format"] or installed["required_version"] not in contract["supported_versions"]:
-        raise ValueError("Hosted contract no longer supports installed workflows; review a new client version")
+    for plugin in ("indaga", "indaga-weekly"):
+        installed = json.loads((ROOT / plugin / "references/compatibility.json").read_text())
+        if installed["format"] != contract["format"] or installed["required_version"] not in contract["supported_versions"]:
+            raise ValueError("Hosted contract no longer supports installed workflows; review a new client version")
 
 
 def main():
@@ -72,30 +73,36 @@ def main():
     args = parser.parse_args()
     try:
         contract = fetch()
-        local = ROOT / "indaga/references/public-contract.json"
+        projections = [ROOT / plugin / "references/public-contract.json" for plugin in ("indaga", "indaga-weekly")]
         if args.update:
-            if json.loads(local.read_text()) == contract:
+            if all(json.loads(local.read_text()) == contract for local in projections):
                 print("Public contract unchanged")
                 return
-            local.write_text(json.dumps(contract, indent=2, sort_keys=True) + "\n")
+            for local in projections:
+                local.write_text(json.dumps(contract, indent=2, sort_keys=True) + "\n")
             # A changed packaged projection needs an explicit new client release.
             version_path = ROOT / "indaga/plugin.json"
             old = json.loads(version_path.read_text())["version"]
             major, minor, patch = map(int, old.split("."))
             new = f"{major}.{minor}.{patch + 1}"
-            for relative in ("indaga/plugin.json", "indaga/.claude-plugin/plugin.json",
-                             "indaga/.codex-plugin/plugin.json", ".claude-plugin/marketplace.json"):
+            for relative in (*(f"{plugin}/{manifest}" for plugin in ("indaga", "indaga-weekly")
+                               for manifest in ("plugin.json", ".claude-plugin/plugin.json", ".codex-plugin/plugin.json")),
+                             ".claude-plugin/marketplace.json"):
                 path = ROOT / relative
                 value = json.loads(path.read_text())
                 if relative.endswith("marketplace.json"):
-                    value["plugins"][0]["version"] = new
+                    for entry in value["plugins"]:
+                        entry["version"] = new
                 else:
                     value["version"] = new
-                path.write_text(json.dumps(value, indent=2) + "\n")
-            for relative in ("README.md", "indaga/README.md"):
+                    if relative == "indaga-weekly/.claude-plugin/plugin.json":
+                        value["dependencies"] = [{"name": "indaga", "marketplace": "indaga", "version": f"~{new}"}]
+                path.write_text(json.dumps(value, indent=2).replace(old, new) + "\n")
+            for relative in ("README.md", "indaga/README.md", "indaga-weekly/README.md",
+                             "indaga-weekly/references/connection.md", "docs/optional-skills.md", "docs/releases.md"):
                 path = ROOT / relative
-                path.write_text(path.read_text().replace(f"`{old}`", f"`{new}`"))
-            print(f"Proposed public contract projection update and plugin {new}; review required")
+                path.write_text(path.read_text().replace(old, new))
+            print(f"Proposed public contract projection update and both plugins {new}; review required")
         else:
             compatible(contract)
             print("Hosted server supports the installed public contract")
