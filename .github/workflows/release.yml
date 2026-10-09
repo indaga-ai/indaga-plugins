@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Approved version on main (for example 0.2.6)'
+        description: 'Approved version on main (for example 0.2.7)'
         required: true
         type: string
 permissions:

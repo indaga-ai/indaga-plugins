@@ -6,7 +6,7 @@ these three workflows and the hosted MCP connection. **Indaga Weekly** is a
 separately installed instruction-only plugin for wearable comparisons.
 This repository does not contain a self-hosted Indaga server.
 
-Version `0.2.6` is a release candidate. Installation, native account sign-in,
+Version `0.2.7` is a release candidate. Installation, native account sign-in,
 workflow acceptance and public directory approval are separate checks. Splitting
 weekly instructions does not establish eligibility for either host's directory.
 
@@ -38,7 +38,7 @@ complete its hosted connection's OAuth sign-in. The catalogue is at
 ## Add weekly separately
 
 Install **Indaga Weekly** from the same marketplace or use the versioned
-`indaga-weekly-0.2.6.zip` / `.plugin` asset. It contains only weekly instructions
+`indaga-weekly-0.2.7.zip` / `.plugin` asset. It contains only weekly instructions
 and local references, with no MCP registration or separate sign-in.
 
 In Claude Code:
@@ -48,7 +48,7 @@ In Claude Code:
 ```
 
 Then request `/indaga-weekly:weekly`. The Claude manifest declares a main-plugin
-dependency at `~0.2.6`: compatible `0.2.x` versions at least `0.2.6`. Host dependency
+dependency at `~0.2.7`: compatible `0.2.x` versions at least `0.2.7`. Host dependency
 resolution does not prove the loaded main version or authenticated connection.
 Verify both before using weekly. In Codex and other hosts, install the main plugin
 explicitly first, then add **Indaga Weekly**. If main is missing, older,

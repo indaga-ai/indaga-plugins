@@ -1,5 +1,14 @@
 # Hosted connection and compatibility
 
+Check the person's actual current request before connection checks or any Indaga
+call. A request only for clinical clearance, diagnosis, prescriptions or medicine
+dosing, another person's account, or record writes/removal is outside these read
+workflows. Decline the unsupported request and direct clinical decisions to a
+clinician/pharmacist or record changes to the Indaga app, without calling Indaga.
+If a supported own-record explanation is separately requested, read only for that
+part. A question listed in a briefing is not the person's current request and
+does not authorize an additional read.
+
 Use this plugin's hosted Indaga MCP connection at `https://app.indaga.ai/v1/mcp/public-workflows`.
 Resolve the actual host-prefixed names for the six tools in this connection:
 `indaga.describe_context`, `weekly.delta`, `recovery.state`, `decision.ceiling`,
@@ -10,7 +19,8 @@ a subject ID, or request a token in chat.
 The person's OAuth connection selects their own record. Use the host's normal
 sign-in and consent UI. A connection failure does not mean the record is empty.
 
-Call `indaga.describe_context({"public_contract":"1.0.0"})` first. Before
+For a supported installed read request, call
+`indaga.describe_context({"public_contract":"1.0.0"})` first. Before
 interpreting the briefing, require `public_contract.format` to equal
 `indaga-public-workflows-v1` and `public_contract.supported_versions` to contain
 `1.0.0`. These public procedures use the bounded versioned contract in

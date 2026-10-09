@@ -2,13 +2,13 @@
 
 This separately installed plugin contains only the weekly wearable comparison
 procedure and its local references. It requires the installed main **Indaga**
-plugin at `~0.2.6` (compatible `0.2.x` versions at least `0.2.6`) and main's
+plugin at `~0.2.7` (compatible `0.2.x` versions at least `0.2.7`) and main's
 authenticated `indaga-public-workflows` connection. If main is missing, older,
 incompatible or unconnected, stop and install/update and connect main first.
 An Indaga account with Connect access is required.
 
 Install **Indaga Weekly** from the same Indaga marketplace or upload
-`indaga-weekly-0.2.6.plugin` / ZIP through the host's supported plugin controls.
+`indaga-weekly-0.2.7.plugin` / ZIP through the host's supported plugin controls.
 In Claude Code, use `/plugin install indaga-weekly@indaga`, then
 `/indaga-weekly:weekly`. Its Claude manifest declares the supported dependency;
 verify the actual loaded main version and OAuth connection separately. Codex and

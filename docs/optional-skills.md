@@ -10,10 +10,10 @@ Versioned release assets include:
 
 | Skill archive | Workflow |
 | --- | --- |
-| `indaga-record-skill-0.2.6.zip` | Recorded sources, date ranges and missing inputs |
-| `indaga-weekly-skill-0.2.6.zip` | Weekly wearable comparisons |
-| `indaga-recovery-skill-0.2.6.zip` | Recovery evidence and training-ceiling limits |
-| `indaga-labs-skill-0.2.6.zip` | Named dated results and panel coverage |
+| `indaga-record-skill-0.2.7.zip` | Recorded sources, date ranges and missing inputs |
+| `indaga-weekly-skill-0.2.7.zip` | Weekly wearable comparisons |
+| `indaga-recovery-skill-0.2.7.zip` | Recovery evidence and training-ceiling limits |
+| `indaga-labs-skill-0.2.7.zip` | Named dated results and panel coverage |
 
 Download assets from the [reviewed release](https://github.com/indaga-ai/indaga-plugins/releases)
 when published. A source checkout or prepared archive does not establish directory
@@ -35,7 +35,7 @@ make the connector's tools available in every client or session: confirm the
 connection is enabled where you will use the skill.
 
 Use one connection. Weekly, including its standalone skill pack, requires the
-installed main plugin at `~0.2.6` (compatible `0.2.x` versions at least `0.2.6`)
+installed main plugin at `~0.2.7` (compatible `0.2.x` versions at least `0.2.7`)
 and its authenticated connection. If absent or incompatible, install/update and
 connect main first. Do not add a standalone copy of a workflow already supplied
 by an installed plugin. A standalone pack declares no plugin dependency and
@@ -72,7 +72,7 @@ release checksums and install weekly only if its destination does not exist:
 shasum -a 256 -c SHA256SUMS
 mkdir -p ~/.agents/skills
 test ! -e ~/.agents/skills/indaga-weekly && \
-  unzip indaga-weekly-skill-0.2.6.zip -d ~/.agents/skills
+  unzip indaga-weekly-skill-0.2.7.zip -d ~/.agents/skills
 ```
 
 Keep all downloaded assets alongside `SHA256SUMS` for that checksum command. If

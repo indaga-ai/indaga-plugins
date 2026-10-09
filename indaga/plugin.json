@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "indaga",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Review your own Indaga record, recovery evidence and dated lab results.",
   "author": {
     "name": "Indaga",

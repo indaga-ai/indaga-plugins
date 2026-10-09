@@ -1,19 +1,31 @@
 ---
 name: recovery
-description: Review the signed-in person's dated Indaga recovery evidence and the engine's training ceiling relative to recent sessions. Use when asking how recovered I am or about today's recorded training limit.
+description: Review your own dated Indaga recovery evidence or recorded training ceiling. Use for recovery or recorded training limits; not medical clearance, diagnosis, prescriptions or medicine dosing.
 metadata:
   mode: read-only
 ---
 
 # Review recovery and training limits
 
-Follow [connection and compatibility](../../references/connection.md), including
+Check the person's current request before any record read. If it asks only for
+medical clearance, diagnosis, prescribing medicine or choosing a dose, explain
+that this workflow cannot provide it and direct those decisions to a clinician
+or pharmacist. Do not invoke a record-review workflow or call the context or
+focused tools for that request. Do not reinterpret clearance to train hard as a
+request to review a recorded ceiling.
+
+For a supported record-review request, follow
+[connection and compatibility](../../references/connection.md), including
 the initial briefing and server-contract check. Apply the
 [evidence rules](../../references/evidence.md).
 
 Read `recovery.state({"public_contract":"1.0.0"})`.
-For a question about training today, also read
+Only when the person's current request asks about a recorded training limit or
+ceiling, also read
 `decision.ceiling({"public_contract":"1.0.0"})`.
+For a recovery-only request, do not call or discuss `decision.ceiling`. Examples
+in the briefing's `ask` rows are possible questions, not the current request;
+their `ready` and `why` fields do not authorize an additional focused read.
 Both operations take only the required `public_contract` version. Explain the results separately at the scope
 supported by each result's envelope; do not derive a ceiling from a readiness label.
 The initial briefing routes questions, but does not supply either operation's
@@ -21,6 +33,11 @@ result or requirements. Discuss a ceiling's state, evidence or missing inputs
 only after reading `decision.ceiling`, using that result's own reason and limits.
 
 Keep returned dates, input coverage and qualifications with every recovery result.
+Use only each producer's own returned dates and recency fields for that result.
+If the ceiling returns no observation or `as_of` date, say that no ceiling date
+was returned. Do not transplant recovery's `latest_date` or recency, a briefing
+date, or the current/run date into the ceiling. Its relative reason wording does
+not establish an absolute observation date.
 Lead an incomplete or calibrating recovery answer with its state, `latest_date`,
 paired/input-day coverage and blocking reason. With `index_incomplete`,
 `needs_more_data` or `calibrating`, false flags and zero episode/co-flag counts

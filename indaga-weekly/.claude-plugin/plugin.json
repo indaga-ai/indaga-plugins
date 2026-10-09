@@ -1,7 +1,7 @@
 {
   "name": "indaga-weekly",
-  "version": "0.2.6",
-  "description": "Review weekly changes in your own Indaga wearable record. Requires the main Indaga plugin at compatible 0.2.x >=0.2.6 and its authenticated public connection.",
+  "version": "0.2.7",
+  "description": "Review weekly changes in your own Indaga wearable record. Requires the main Indaga plugin at compatible 0.2.x >=0.2.7 and its authenticated public connection.",
   "author": {
     "name": "Indaga",
     "email": "support@indaga.ai",
@@ -17,7 +17,7 @@
     {
       "name": "indaga",
       "marketplace": "indaga",
-      "version": "~0.2.6"
+      "version": "~0.2.7"
     }
   ]
 }

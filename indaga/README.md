@@ -5,13 +5,13 @@ and gaps, dated recovery evidence and named lab results or panel coverage.
 An adult reviews their own record with an Indaga account and Connect access.
 Weekly comparisons are the separately installed **Indaga Weekly** plugin.
 
-Install main from its marketplace or upload `indaga-0.2.6.plugin` / ZIP through
+Install main from its marketplace or upload `indaga-0.2.7.plugin` / ZIP through
 Claude's supported plugin upload controls. Complete the hosted connection's
 sign-in and consent. In Claude Code, use `/mcp`, then `/indaga:record`,
 `/indaga:recovery` or `/indaga:labs`. Main does not contain `/indaga:weekly`.
 
 Main registers `indaga-public-workflows` at
-`https://app.indaga.ai/v1/mcp/public-workflows`. Version `0.2.6` contains its
+`https://app.indaga.ai/v1/mcp/public-workflows`. Version `0.2.7` contains its
 procedures and does not download behavioral guidance. See the
 [connection guide](references/connection.md) for the reviewed public contract.
 Every tool call passes the required version; unsupported versions are rejected

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "indaga-weekly",
-  "version": "0.2.6",
-  "description": "Review weekly changes in your own Indaga wearable record. Requires the main Indaga plugin at compatible 0.2.x >=0.2.6 and its authenticated public connection.",
+  "version": "0.2.7",
+  "description": "Review weekly changes in your own Indaga wearable record. Requires the main Indaga plugin at compatible 0.2.x >=0.2.7 and its authenticated public connection.",
   "author": {
     "name": "Indaga",
     "email": "support@indaga.ai",
@@ -16,7 +16,7 @@
       "interface": {
         "displayName": "Indaga Weekly",
         "shortDescription": "Review weekly wearable changes",
-        "longDescription": "One read-only weekly comparison workflow for adults reviewing their own Indaga wearable record. Requires the installed main Indaga plugin at compatible 0.2.x >=0.2.6 and its authenticated public workflow connection. This instruction-only plugin registers no MCP server and performs no separate authentication. Preserve dates, units, missing inputs and uncertainty. For consumer wellness information, not diagnosis or treatment. All six public tools and the broader OAuth grant remain available through the main connection. Your chosen AI provider receives the information it reads under its terms and privacy policy and may process it outside the EU. Revocation stops future access without deleting provider copies. Separate packaging does not establish directory eligibility or approval.",
+        "longDescription": "One read-only weekly comparison workflow for adults reviewing their own Indaga wearable record. Requires the installed main Indaga plugin at compatible 0.2.x >=0.2.7 and its authenticated public workflow connection. This instruction-only plugin registers no MCP server and performs no separate authentication. Preserve dates, units, missing inputs and uncertainty. For consumer wellness information, not diagnosis or treatment. All six public tools and the broader OAuth grant remain available through the main connection. Your chosen AI provider receives the information it reads under its terms and privacy policy and may process it outside the EU. Revocation stops future access without deleting provider copies. Separate packaging does not establish directory eligibility or approval.",
         "developerName": "Indaga",
         "category": "Healthcare",
         "websiteURL": "https://indaga.ai",
@@ -35,7 +35,7 @@
         ]
       },
       "publication": {
-        "release_notes": "One contained weekly workflow. Requires installed main Indaga at compatible 0.2.x >=0.2.6 and its authenticated connection; no MCP registration or separate authentication."
+        "release_notes": "One contained weekly workflow. Requires installed main Indaga at compatible 0.2.x >=0.2.7 and its authenticated connection; no MCP registration or separate authentication."
       }
     }
   }

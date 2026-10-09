@@ -133,7 +133,7 @@ and restart the application. Follow the host's current supported controls.
 
 Confirm each installed version matches its released manifest. Main discovers
 record/recovery/labs; weekly is available only when separately installed. Weekly
-requires compatible main `~0.2.6` and main's authenticated connection. Claude
+requires compatible main `~0.2.7` and main's authenticated connection. Claude
 dependency resolution alone does not prove loaded bytes, version or sign-in.
 Codex requires explicit main installation. Establish a new sign-in if the endpoint changed.
 Do not copy an OAuth token from the old connection. The first workflow call must

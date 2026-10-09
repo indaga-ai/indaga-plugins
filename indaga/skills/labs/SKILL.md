@@ -1,6 +1,6 @@
 ---
 name: labs
-description: Review a named lab result or requested panel's measurement coverage in the signed-in person's Indaga record. Use for stored blood results, draw dates, lab history or missing panel measurements.
+description: Review stored lab results and requested panel coverage in your own Indaga record, retaining draw dates and missing measurements. Not for medical clearance, diagnosis, prescriptions or medicine dosing.
 metadata:
   mode: read-only
 ---

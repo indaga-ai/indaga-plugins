@@ -2,6 +2,21 @@ Three contained read-only workflows in the main Indaga plugin: record, recovery
 and labs, with the hosted connection. Indaga Weekly is a separately installed
 instruction-only plugin. Install using the repository README or versioned assets.
 
+Version 0.2.7 keeps inventory routing hints separate from focused producer
+results and prefers absolute returned dates over conflicting relative wording.
+Recovery-only requests do not read a training ceiling. Recovery and ceiling dates
+come only from their own producer; an undated ceiling remains undated. Unsupported
+clinical clearance, diagnosis, prescription/dosing, foreign-account and mutation
+requests are checked before connection/context reads. Recovery and labs metadata
+exclude pure clinical requests; supported own-record explanations remain bounded
+reads. Both connection guides and standalone packs carry the same intent boundary.
+
+Main still contains record/recovery/labs and the sole public connection; weekly
+remains a separately installed instruction-only plugin with compatible main
+`~0.2.7`. Weekly and labs focused procedural bodies, shared evidence, six hosted
+tools, public contract and broad OAuth grant remain unchanged. This repair does
+not establish native acceptance or directory eligibility by packaging alone.
+
 Version 0.2.6 moves the unchanged weekly procedure to its own plugin with contained
 references, license, icons and host manifests. Main no longer bundles weekly
 instructions. Weekly requires compatible installed main `~0.2.6` and its
